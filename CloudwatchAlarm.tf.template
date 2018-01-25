@@ -9,4 +9,7 @@ resource "aws_cloudwatch_metric_alarm" "^name^" {
   threshold                 = "^threshold^"
   alarm_description         = "^alarmDescription^"
   insufficient_data_actions = []
+  dimensions {
+    ^dimensions^
+  }
 }
