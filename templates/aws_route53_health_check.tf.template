@@ -1,0 +1,21 @@
+resource "aws_route53_health_check" "^id^" {
+  id                                = "^id^"
+  reference_name                    = "^reference_name^"
+  ^endpoint^
+  port                              = ^port^
+  type                              = "^type^"
+  failure_threshold                 = "^failure_threshold^"
+  request_interval                  = "^request_interval^"
+  resource_path                     = "^resource_path^"
+  search_string                     = "^search_string^"
+  measure_latency                   = "^measure_latency^"
+  invert_healthcheck                = "^invert_healthcheck^"
+  enable_sni                        = "^enable_sni^"
+  child_healthchecks                = [^child_healthchecks^]
+  child_health_threshold            = "^child_health_threshold^"
+  insufficient_data_health_status   = "^insufficient_data_health_status^"
+  regions                           = [^regions^]
+  tags = {
+    ^tags^
+  }
+}

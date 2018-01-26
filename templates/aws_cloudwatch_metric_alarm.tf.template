@@ -1,5 +1,6 @@
 resource "aws_cloudwatch_metric_alarm" "^name^" {
   alarm_name                = "^name^"
+  alarm_actions             = [^alarmActions^]
   comparison_operator       = "^comparisonOperator^"
   evaluation_periods        = "^evaluationPeriods^"
   metric_name               = "^metricName^"
