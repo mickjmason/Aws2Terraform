@@ -2,6 +2,7 @@
 Clear-Host
 
 #Create constants for output files
+$Global:terraform = "C:\development\terraform\terraform.exe"
 $Global:baseFolder = "C:\development\Aws2Terraform"
 $Global:outputFolder = "$Global:baseFolder\output"
 $Global:aws_cloudwatch_metric_alarm_template = ".\templates\aws_cloudwatch_metric_alarm.tf.template"
@@ -123,7 +124,7 @@ function performImport()
             $resourceDetails = [regex]::Matches($_,'(?<=\").+?(?=\")').Value
             $resourceId = $resourceDetails[0] + "." +$resourceDetails[2]
             $resourceName = $resourceDetails[2]
-            & "c:\development\terraform\terraform.exe" "import" "-config=""$Global:outputFolder""" "$resourceId" "$resourceName"
+            & "$Global:terraform" "import" "-config=""$Global:outputFolder""" "$resourceId" "$resourceName"
         }
     }
 }
@@ -131,7 +132,7 @@ function main (){
     Write-Host "Beginning scan."
     renameOldFiles
     performInventory
-    performImport
+    #performImport
 }
 
 main
